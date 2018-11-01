@@ -1,5 +1,6 @@
 import requests
 import re
+import database
 
 regex = 'https://twitter.com/[a-zA-Z0-9$&+,:;=?@#|<>.^*''()%!-]*'
 
@@ -14,6 +15,8 @@ for site in sites:
         handle = handle[8:]
         returned_handle = '@' + handle[12:]
         print(returned_handle)
+        conn = database.connect()
+        database.insert_data(conn,returned_handle)
 
 
 
