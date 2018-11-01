@@ -1,5 +1,27 @@
+
+"""
+create database HANDLES;
+
+CREATE TABLE TWITTER_HANDLES(
+	handle_id int auto_increment,
+	handle varchar(50) not null,
+	primary key (handle_id)
+)
+
+this is the database and table created to add handles into
+this is using mysql.
+"""
+
+
+
+
 import pymysql
 import config
+
+
+
+
+
 
 
 def connect():
