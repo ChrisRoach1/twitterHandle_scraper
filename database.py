@@ -1,4 +1,3 @@
-
 """
 create database HANDLES;
 
@@ -12,29 +11,20 @@ this is the database and table created to add handles into
 this is using mysql.
 """
 
-
-
-
 import pymysql
 import config
 
 
-
-
-
-
-
 def connect():
-    conn = pymysql.connect(host='localhost', port=3306 ,database=config.db, user=config.db_user, password=config.db_password)
+    conn = pymysql.connect(host='localhost', port=3306, database=config.db, user=config.db_user,
+                           password=config.db_password)
     print('Connected to MySQL database')
     return conn
 
 
-
-
-def insert_data(connection,handle):
+def insert_data(connection, handle):
     cursor = connection.cursor()
-    sql = "insert into twitter_handles(handle) VALUES('%s')" % (handle)
+    sql = "insert into twitter_handles(handle) VALUES('%s')" % handle
     cursor.execute(sql)
     connection.commit()
     print("handle added!")

@@ -3,6 +3,7 @@ import re
 import database
 
 regex = 'https://twitter.com/[a-zA-Z0-9$&+,:;=?@#|<>.^*''()%!-]*'
+conn = database.connect()
 
 file = input("enter file path: ")
 
@@ -15,8 +16,7 @@ for site in sites:
         handle = handle[8:]
         returned_handle = '@' + handle[12:]
         print(returned_handle)
-        conn = database.connect()
-        database.insert_data(conn,returned_handle)
+        database.insert_data(conn, returned_handle)
 
 
 
